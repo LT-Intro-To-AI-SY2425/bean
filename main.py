@@ -31,5 +31,5 @@ training = training_data[:split_index]
 testing = training_data[split_index:]
 
 bean_network = NeuralNet(16, 16, 1)
-bean_network.train(training, learning_rate=1, print_interval=1)
+bean_network.train(training, print_interval=1)
 print(bean_network.test_with_expected(testing))
