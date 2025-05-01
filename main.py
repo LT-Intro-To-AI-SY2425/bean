@@ -27,13 +27,15 @@ for i in range(len(x_scaled)):
     sample = (x_scaled[i].tolist(), [y_encoded[i]])
     training_data.append(sample)
 
+
 training_data_len = len(training_data)
-training_size = 0.1
+training_size = 0.01
 split_index = int(training_data_len * training_size)
 
 training = training_data[:split_index]
 testing = training_data[split_index:]
 
+print(training)
 bean_network = NeuralNet(3, 12, 1)
 bean_network.train(training, print_interval=1)
 print(bean_network.test_with_expected(testing))
